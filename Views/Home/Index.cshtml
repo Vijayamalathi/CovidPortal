@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CovidPortal.Models.CovidTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfConfirmedCase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgeGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfConfirmedCase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgeGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CaseNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CaseNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CaseNumber })
+        </td>
+    </tr>
+}
+
+</table>
