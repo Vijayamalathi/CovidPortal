@@ -24,15 +24,24 @@ namespace CovidPortal.Controllers
         //    return View(orig);
         //}
         public ActionResult Details(CovidTable c)
-
             //(CovidTable cities)
         {
             ViewBag.Message = "Result List";
-            var data = new List<CovidTable>(from m in _db.Covids
-                                            where m.AgeGroup == c.AgeGroup
-                                            select m).ToList();
+            //var data = new List<CovidTable>(from m in _db.Covids
+            //                                where m.AgeGroup == c.AgeGroup ||
+            //                                m.Gender == c.Gender ||
+            //                                m.DateOfConfirmedCase == c.DateOfConfirmedCase
+            //                                select m).ToList();
+           
+            
+                var data = new List<CovidTable>(from m in _db.Covids
+                                                where m.AgeGroup == c.AgeGroup &&
+                                                m.Gender == c.Gender &&
+                                                m.DateOfConfirmedCase == c.DateOfConfirmedCase
+                                                select m).ToList();
+            
 
-            List<CovidTable> coviddat = new List<CovidTable>();
+            List < CovidTable > coviddat = new List<CovidTable>();
             foreach (var row in data)
             {
                 coviddat.Add(new CovidTable

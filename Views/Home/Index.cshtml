@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>List of Residents Diagnosed with COVID-19 in Thurston County</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Click here for break-up info", "Create")
 </p>
 <table class="table">
     <tr>
@@ -34,11 +34,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Gender)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CaseNumber }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CaseNumber }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CaseNumber })
-        </td>
+        
     </tr>
 }
 
