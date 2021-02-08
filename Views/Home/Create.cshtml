@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Statistics</h2>
 
 
 @using (Html.BeginForm("Details","Home"))
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Covid Table</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.CaseNumber)
@@ -21,7 +21,7 @@
             @Html.LabelFor(model => model.DateOfConfirmedCase, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DateOfConfirmedCase, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DateOfConfirmedCase, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.DateOfConfirmedCase, "**Please enter 3/13/2020 or 3/14/2020 or 3/15/2020", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -29,7 +29,7 @@
             @Html.LabelFor(model => model.AgeGroup, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.AgeGroup, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AgeGroup, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.AgeGroup, "**eg: 50 or 60 or 70", new { @class = "text-danger" })
             </div>
         </div>
 
