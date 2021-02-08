@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<CovidPortal.Models.CovidTable>
 
+
 @{
     ViewBag.Title = "Details";
 }
@@ -9,6 +10,8 @@
 <p>
     @Html.ActionLink("Click to go Back", "Create")
 </p>
+<h3><b>Count : </b>  @Model.Count() </h3>
+
 <table class="table">
     <tr>
         <th>
@@ -23,19 +26,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateOfConfirmedCase)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AgeGroup)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gender)
-        </td>
-        
-    </tr>
-}
+
+
+
+
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfConfirmedCase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgeGroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+
+        </tr>
+
+    }
+
+
 
 </table>
